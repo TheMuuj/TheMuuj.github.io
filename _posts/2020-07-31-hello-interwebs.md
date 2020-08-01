@@ -21,7 +21,7 @@ database on the web. But no matter what I did, I was never happy with WordPress
 as a platform, either for blogs or for simple websites.
 
 Now I'm going to give Jekyll a try. I use Markdown almost daily for my job, and
-it has quickly become very second nature. Also, compiling a website from a Git
-repository into a static HTMl site is very appealing to me.
+it has quickly become very second nature. Also, compiling posts from a Git
+repository into a static HTML website is very appealing to me.
 
 So we'll see if I can stick to this format for a while.

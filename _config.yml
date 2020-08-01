@@ -7,6 +7,7 @@ github_username: themuuj
 plugins:
   - jekyll-feed
 permalink: /:categories/:year/:month/:title/
+date_format: '%b %-d, %Y'
 defaults:
   -
     scope:

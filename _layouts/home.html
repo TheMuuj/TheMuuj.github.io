@@ -14,16 +14,18 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h3>
+        {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+        <small class="post-meta">{{ post.date | date: date_format }}</small>        
         {%- if site.show_excerpts -%}
+        <article>
           {{ post.excerpt }}
-        {%- endif -%}
+        </article>
+        {%- endif -%}        
       </li>
       {%- endfor -%}
     </ul>

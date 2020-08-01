@@ -1,20 +1,43 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ site.locale }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/stylesheets/print.css" media="print" />
 
-  {%- include head.html -%}
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title> {{ page.title }} </title>
+  </head>
 
   <body>
-
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <main>
+          <section id="main-content">          
+            {{ content }}
+          </section>
+        </main>
+
+        <aside id="sidebar">
+          {% if site.github.is_project_page %}
+            <a href="{{ site.github.repository_url }}" class="button"><small>View project on</small> GitHub</a>
+          {% endif %}
+          {% if site.github.is_user_page %}
+            <a href="{{ site.github.owner_url }}" class="button"><small>Follow me on</small> GitHub</a>
+          {% endif %}
+        </aside>
       </div>
-    </main>
+    </div>
 
     {%- include footer.html -%}
-
   </body>
-
 </html>

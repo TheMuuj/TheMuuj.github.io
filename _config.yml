@@ -1,6 +1,11 @@
 title: themuuj.com
-description: The mad machinations of a software architect
+description: Mad Machinations of a Software Architect
+markdown: kramdown
 theme: jekyll-theme-architect
+linkedin_username: matthew-jackson
+github_username: themuuj
+plugins:
+  - jekyll-feed
 permalink: /:categories/:year/:month/:title/
 defaults:
   -

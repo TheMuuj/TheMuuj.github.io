@@ -1,1 +1,13 @@
+title: themuuj.com
+description: The mad machinations of a software architect
 theme: jekyll-theme-architect
+permalink: /:categories/:year/:month/:title/
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+      author: Matthew W. Jackson
+      category: blog

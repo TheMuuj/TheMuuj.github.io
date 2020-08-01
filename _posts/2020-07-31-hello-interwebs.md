@@ -25,7 +25,7 @@ install WordPress, customize Themes, use a Linux server, and manage a MySql
 database on the web. It was cheap to host, for sure. But no matter what I did,
 I was never happy with WordPress as a platform, either for blogs or for simple
 websites. And any level of customization meant dealing with PHP and a mess
-of jumbled HTML code.
+of jumbled HTML markup.
 
 Also, the popularity of WordPress meant keeping the installations up to date,
 lest your installation get hacked.

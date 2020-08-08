@@ -1,4 +1,18 @@
 <aside id="sidebar">
-  <p><a href="{{ site.github.owner_url }}" class="button"><small>Follow me on</small> GitHub</a></p>
-  <p><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" class="button"><small>Judge me on</small> LinkedIn</a></p>
+  <nav>
+    <h3>Navigation</h3>
+    <ul>
+      <li><a href="{{ '/quotes/' | absolute_url }}">My Favorite Quotes</a></li>
+    </ul>
+
+    <h3>Recommendations</h3>
+    <ul>
+      <li><a target="_blank" href="http://greenisomer.com">GreenIsomer</a></li>
+      <li><a target="_blank" href="http://burntbeanco.com">Burnt Bean Co</a></li>
+      <li><a target="_blank" href="http://doesthedogdie.com">Does the Dog Die?</a></li>
+    </ul>
+
+    <p><a target="_blank" href="{{ site.github.owner_url }}" class="button"><small>Follow me on</small> GitHub</a></p>
+    <p><a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" class="button"><small>Judge me on</small> LinkedIn</a></p>
+  </nav>
 </aside>

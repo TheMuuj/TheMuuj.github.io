@@ -7,6 +7,8 @@ So you're developing a large JavaScript application, and you eventually
 decide to formalize your logging rather than haphazardly using 
 `console.log` and its brethren all over the place.
 
+<!--more-->
+
 Perhaps your UI framework has a logging utility you can hook into, or
 perhaps you're going to write your own.
 

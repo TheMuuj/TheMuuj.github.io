@@ -3,15 +3,16 @@ title: Hello, Interwebs!
 tags: meta
 ---
 
-# Hello, Interwebs
-
 My first blog, which I had dubbed a "Web Journal" as the word "blog" wasn't
 a thing yet, was run on a custom Classic ASP application backed by a Microsoft
 Access database. I used it to learn web programming, including up-and-coming
-technologies like CSS and RSS, as well as basic database design. Over the
-years, being being written in VBScript with old legacy technologies, it became
-difficult to maintain and keep secure from spammers, who were also beginning
-to take over the web.
+technologies like CSS and RSS, as well as basic database design.
+
+<!--more-->
+
+Over the years, being being written in VBScript with old legacy technologies,
+it became difficult to maintain and keep secure from spammers, who were also
+beginning to take over the web.
 
 Also, my friends and family members who shared the platform became busy with
 their lives and stopped contributing as much.

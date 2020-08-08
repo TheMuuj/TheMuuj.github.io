@@ -1,19 +1,31 @@
 title: themuuj.com
 description: Mad Machinations of a Software Architect
 markdown: kramdown
-theme: jekyll-theme-architect
+#theme: jekyll-theme-architect
+include: [ _pages ]
 linkedin_username: matthew-w-jackson
 github_username: themuuj
 plugins:
   - jekyll-feed
 permalink: /:categories/:year/:month/:title/
-date_format: '%b %-d, %Y'
+show_excerpts: true
+excerpt_separator: <!--more-->
+date_format: '%Y-%m-%d'
 defaults:
   -
     scope:
       path: ""
       type: posts
     values:
-      layout: default
+      layout: post
       author: Matthew W. Jackson
       category: blog
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      author: Matthew W. Jackson
+      category: page
+

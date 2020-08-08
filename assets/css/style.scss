@@ -3,11 +3,82 @@
 
 @import 'jekyll-theme-architect';
 
+@media only screen and (max-width: 767px) {
+    header .logo {
+        display: none;
+    }
+}
+
 h1 a {
     color: white !important;
 }
 
+header .logo {
+    margin: 0 32px 0 0;
+    float: right;
+}
+
 // remove bullets from home page post list
-.post-list > li {
-    list-style: none;
+.post-list, nav > ul {
+    > li {
+        list-style: none;
+    }
+}
+
+.post-date {
+    font-weight: normal;
+    color: #2879d0;
+}
+
+.post-more {
+    border-top: dotted 1px #aaa;
+    padding: 0.25rem 0 0 0;
+}
+
+time {
+    font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+    font-size: 13px;    
+}
+
+.label {
+    margin: 0;
+    color: #2879d0;
+}
+
+.meta {
+    display: flex;
+    align-items: baseline;
+    color: #222;
+
+    .label {
+        margin: 0 0.25rem 0 0;
+        color: #aaa;
+    }
+}
+
+aside.meta {
+    justify-content: flex-end;
+    width: 100%;    
+}
+
+ul.tags, ol.tags {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    li {
+        display: block;
+        margin: 0 0.25rem 0 0;
+        padding: 0 0.25rem;
+        color: #2e7bcf;
+        background: #eee;
+        border: solid 1px #aaa;
+        border-radius: 0.75rem;
+    }
+}
+
+footer {
+    h3, p {
+        margin: 0 0 0.5rem 0;
+    }
 }

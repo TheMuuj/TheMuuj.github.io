@@ -7,6 +7,8 @@ I've got quite a backlog of books to read, and a smaller, but still significant 
 
 I'm going to get started with some of my favorite non-fiction books about **math** and **science**, in no particular order and without any elaborate discussion or ratings.
 
+<!--more-->
+
 I consider these all to be fantastic reads. Many of them have been around a long time and are on lots of recommendation lists, for sure.
 
 - *"Surely You're Joking, Mr. Feynman!": Adventures of a Curious Character* by **Richard P. Feynman** [(Amazon)](https://www.amazon.com/Surely-Youre-Joking-Mr-Feynman/dp/0393355624)

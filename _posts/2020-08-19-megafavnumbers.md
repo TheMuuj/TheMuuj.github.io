@@ -1,5 +1,5 @@
 ---
-title: #MegaFavNumbers
+title: '#MegaFavNumbers'
 tags: math numbers
 ---
 

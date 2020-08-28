@@ -136,7 +136,6 @@ If the collection has more items than expected, the excess items are never actua
 Here are a few unit tests that show off how collection deconstructing works:
 
 ```csharp
-
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -240,7 +239,6 @@ namespace TheMuuj.Blog.Tests {
     }
 
 }
-
 ```
 
 The `TestDeconstruct2TaskAsync` test shows how this can be used with `Task.WhenAll`, which is the C# equivalent of JavaScript's `Promise.all`.

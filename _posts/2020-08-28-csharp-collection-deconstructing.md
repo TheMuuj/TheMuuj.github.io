@@ -155,7 +155,7 @@ namespace TheMuuj.Blog.Tests {
                 .ConfigureAwait(false);
 
             return result;
-        }         
+        }
 
         [TestMethod]
         public void TestDeconstruct2() {

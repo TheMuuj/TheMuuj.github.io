@@ -44,7 +44,7 @@ There are several `HttpMessageHandler` implementations, each with subtle differe
 - `CFNetworkHandler`: Not much documentation on this one, but it's also Apple/Xamarin-specific.
 - `WinHttpHandler`: Based on the `WinHTTP` interface of Windows, intended for use in server environments.
 
-Once I discovered `WinHttpHandler` and saw that it was for server environments, I realized it was the best fit for my project, and I hoped it was the solution I was looking for. Sure enough, it worked, and the appropriate Client Certificate was being used to sign the requests.
+Once I discovered `WinHttpHandler` and saw that it was for server environments, I realized it was the best fit for my project, and I hoped it was the solution I was looking for. Sure enough, it worked, and the appropriate client certificate was being used to sign the requests.
 
 However, the various implementations of `HttpMessageHandler` have similar properties for configuring the HTTP requests, but they aren't on a shared base class and sometimes have slightly different names.
 

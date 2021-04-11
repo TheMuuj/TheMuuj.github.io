@@ -1,5 +1,6 @@
 ---
 title: TypeScript Convert Array to Object
+description: But everything is an object, right?
 tags: TypeScript JavaScript development
 ---
 

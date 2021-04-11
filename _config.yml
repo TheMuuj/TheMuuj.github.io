@@ -1,7 +1,7 @@
 title: themuuj.com
+url: https://themuuj.com
 description: Mad Machinations of a Software Architect
 markdown: kramdown
-#theme: jekyll-theme-architect
 include: [ _pages ]
 linkedin_username: matthew-w-jackson
 github_username: themuuj
@@ -20,6 +20,7 @@ defaults:
       layout: post
       author: Matthew W. Jackson
       category: blog
+      og_type: article
   -
     scope:
       path: ""
@@ -28,4 +29,4 @@ defaults:
       layout: page
       author: Matthew W. Jackson
       category: page
-
+      og_type: website

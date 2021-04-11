@@ -1,5 +1,6 @@
 ---
 title: SCOTUS Decision on API Copyrights
+description: Finally...
 tags: news legal API
 ---
 

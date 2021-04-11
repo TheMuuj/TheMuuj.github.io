@@ -1,5 +1,6 @@
 ---
 title: TypeScript Group Array by Key
+description: Let's collect these objects into smaller groups
 tags: TypeScript JavaScript development
 ---
 

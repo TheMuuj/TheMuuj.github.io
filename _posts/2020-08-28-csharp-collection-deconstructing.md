@@ -1,5 +1,6 @@
 ---
 title: C# Collection Deconstructing
+description: No, not that kind of ~deconstructor
 tags: development CSharp
 ---
 

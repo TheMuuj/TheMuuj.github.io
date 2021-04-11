@@ -1,5 +1,6 @@
 ---
 title: C# School Modifiers
+description: I think I may need to get outside more
 tags: CSharp musings
 ---
 

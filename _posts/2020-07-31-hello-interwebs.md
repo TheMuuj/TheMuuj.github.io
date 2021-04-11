@@ -1,5 +1,6 @@
 ---
 title: Hello, Interwebs!
+description: It's great to be back!
 tags: meta
 ---
 

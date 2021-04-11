@@ -1,5 +1,6 @@
 ---
 title: Most Helpful Helpers
+description: An elegant function for a more civilized age
 tags: development QBasic
 ---
 

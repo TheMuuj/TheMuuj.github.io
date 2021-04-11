@@ -1,5 +1,6 @@
 ---
 title: console.log Formatter
+description: Making better logs
 tags: TypeScript JavaScript logging
 ---
 

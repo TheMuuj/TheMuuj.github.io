@@ -1,5 +1,6 @@
 ---
 title: .NET HttpClient Woes
+description: My return from a journey down a rabbit hole
 tags: development DotNetCore DotNetFramework CSharp Http
 ---
 

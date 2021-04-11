@@ -30,6 +30,12 @@ header .logo {
     color: #2879d0;
 }
 
+.post-description {
+    font-style: italic;
+    color: #888;
+    border-bottom: dotted 1px #aaa;
+}
+
 .post-more {
     border-top: dotted 1px #aaa;
     padding: 0.25rem 0 0 0;
@@ -63,12 +69,14 @@ aside.meta {
 
 ul.tags, ol.tags {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    font-size: 0.75rem;
     
     li {
         display: block;
-        margin: 0 0.25rem 0 0;
+        margin: 0 0.25rem 0.125rem 0;
         padding: 0 0.25rem;
         color: #2e7bcf;
         background: #eee;

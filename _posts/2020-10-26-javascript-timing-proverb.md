@@ -1,5 +1,6 @@
 ---
 title: JavaScript Timing Proverb
+description: Some wisdom for the modern age
 tags: TypeScript JavaScript timing
 ---
 

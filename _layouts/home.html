@@ -24,6 +24,9 @@ layout: default
         </h3>      
         {%- if site.show_excerpts -%}
         <article>
+          {%- if post.description -%}
+          <p class="post-description">{{ post.description | escape }}</p>
+          {%- endif -%}
           {{ post.excerpt }}
           <p class="post-more">
             <a class="more-link" href="{{ post.url | relative_url }}">

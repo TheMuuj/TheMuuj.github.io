@@ -1,5 +1,6 @@
 ---
 title: '#MegaFavNumbers'
+description: Big numbers other than "a kajillion"
 tags: math numbers
 ---
 

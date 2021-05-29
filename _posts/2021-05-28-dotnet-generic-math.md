@@ -82,7 +82,7 @@ public struct Vector2<T, TMath> where TMath : IMath<T> {
         Y = y;
     }
 
-    public static Vector2<T, TMath> operator(
+    public static Vector2<T, TMath> operator +(
         Vector2<T, TMath> left,
         Vector2<T, TMath> right) {
         return new Vector2<T, TMath>(

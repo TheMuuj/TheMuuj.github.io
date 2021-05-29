@@ -185,7 +185,7 @@ public static MyType op_Exponent(MyType value, MyType power) { ... }
 
 I would have preferred the first example, using the existing `operator` keyword in a new way. However, this would have required a change to the C# parser, and this change was pretty close to the release date and the C# compiler was already able to read attributes.
 
-The C# compiler ended up going with the on-the-nose `[SpecialName]` Attribute that C# checks and uses to add the `IsSpecialName` metadata flag. This isn't limited to just operators.
+The C# compiler team ended up going with the on-the-nose `[SpecialName]` Attribute that C# checks and uses to add the `IsSpecialName` metadata flag. As a result, this isn't just limited to just operators.
 
 As a matter of fact, I'm pretty sure `[SpecialName]` can be manually used on a method named `get_MyValue()` to make it into a property.
 

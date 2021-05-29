@@ -166,9 +166,11 @@ VB has some operators that C# does not, and some of them are overloadable. These
 
 Wanting to support the `^` operator in VB on a numeric type I was writing in C#, I submitted a feature request that C# should allow defining operators for other languages.
 
+*(All of this history is lost because Microsoft has switched feedback tools several times over the years. There are also C# language bugs I've reported that are lost to the void.)*
+
 An overload operator gets compiled to a `static` method with a special name. The addition (`+`) operator becomes `public static op_Addition(T left, T right)`. There is a metadata flag for the method that indicates that this is a "special name", which is readable with reflection via `MethodBase.IsSpecialName`. At the time, there was no way to add this flag to any method manually. It was up to the compiler to do it.
 
-My request suggested that a C# library should be able to define the VB `^` operator by manually defining a `op_Exponent` method and having some mechanism for marking the "special name" flag.
+My request suggested that a C# library should be able to define the VB `^` operator (or other operators) by manually defining an `op_Exponent` method and having some mechanism for including the "special name" flag.
 
 I had a few different ideas.
 

@@ -132,7 +132,7 @@ Because `<T>` is a `struct`, when the JIT compiler generates machine code that i
 
 ### The Ideal Solution
 
-The problem with everything so far is that they don't automatically work if a new "number type" is introduced. Usually `decimal` gets omitted because IEEE floating point calculations are "good enough" and fast. But a unit-conversion library would likely benefit from being able to use `decimal` as well.
+With the exception of the dynamic code generation solution (via `System.Linq.Expressions`), the problem with these solutions is that they don't automatically work when a new "number type" is introduced. Usually `decimal` gets omitted because IEEE floating point calculations are "good enough" and fast. But a unit-conversion library would likely benefit from being able to use `decimal` as well.
 
 The base class library is also adding new numeric types all the time. Recently, we got `System.Half`, a 16-bit floating point number, often used in machine learning. I believe that `System.Quad` is likely to be coming soon, as well as some sort of floating point analogue to `System.Numerics.BigInteger`.
 

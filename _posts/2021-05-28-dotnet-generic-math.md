@@ -55,7 +55,6 @@ Implementing a generic `Sum` or `StandardDeviation` function might have acceptab
 Another approach that has been possible to implement before `Linq` is to add an additional type and type parameter that specifies a helper type. The helper type is a `struct`, in order to cause the generic code to be specialized for each type, but implements an interface in order to provide the contract.
 
 ```csharp
-
 // contract for operators
 public interface IMath<T> {
     T Add(T left, T right);
@@ -83,7 +82,9 @@ public struct Vector2<T, TMath> where TMath : IMath<T> {
         Y = y;
     }
 
-    public static Vector2<T, TMath> operator(Vector2<T, TMath> left, Vector2<T, TMath> right) {
+    public static Vector2<T, TMath> operator(
+        Vector2<T, TMath> left,
+        Vector2<T, TMath> right) {
         return new Vector2<T, TMath>(
             math.Add(left.X, right.X),
             math.Add(left.Y, right.Y)

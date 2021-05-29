@@ -162,7 +162,7 @@ C# prevented this kind of thing by requiring that the right-hand parameter for t
 
 Eventually, Visual Basic also got overloaded operators. At the time, I was writing some .NET libraries, and I was very interested in being useful to all languages in the .NET ecosystem, including VB.
 
-VB has some operators that C# does not, and some of them are overloadable. These include `&` (string concatenation), `\` (integer division), `^` (exponentiation), `Like` (string pattern matching).
+VB has some operators that C# does not, and some of them are overloadable. These include `&` (string concatenation), `\` (integer division), `^` (exponentiation), and `Like` (string pattern matching).
 
 Wanting to support the `^` operator in VB on a numeric type I was writing in C#, I submitted a feature request that C# should allow defining operators for other languages.
 

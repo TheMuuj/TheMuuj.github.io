@@ -8,6 +8,8 @@ I discovered via Twitter that Microsoft was [looking for feedback regarding a dr
 
 As I was reading about the proposal, I came across a discussion of something very near and dear to my heart: a particular Attribute in the .NET Framework.
 
+But first, I'm going to meander into a lot of detail about the purpose of this new proposal and how it's better than the current solutions for Generic Math in .NET.
+
 <!--more-->
 
 Incidentally, I have been interested in this ability since generics were introduced in .NET 2.0. I think because I learned C++ before I learned C#, there have always been things that C++ templates supported (being done in a preprocessing phase) that I miss in C# generics.

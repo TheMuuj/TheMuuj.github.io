@@ -51,7 +51,7 @@ console.log(Reflect.ownKeys(e)); // ["length"]
 
 Calling the `Array` constructor with a number will set the `length` property of the result, but it won't set any other properties.
 
-This is because JavaScript `Array` objects are "sparse" arrays. Calling `Array(1000000000)` won't allocate a ton of memory. (Technically, at least the common browsers won't. I think this is technically left as an implementation detail.)
+This is because JavaScript `Array` objects are "sparse" arrays. Calling `Array(1000000000)` won't allocate a ton of memory. (Well, at least the common browsers won't. I think this is technically an implementation detail.)
 
 Calling `Array(N)` is similar to constructing an array and then calling `delete[n]` on all `N` elements in a `for` loop.
 

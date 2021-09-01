@@ -31,7 +31,7 @@ console.log(c); // [empty x 5]
 
 What gives? What's up with "empty?" If you try to access an empty element, the result is `undefined`, but that's not what Chrome's console is showing.
 
-According to the [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map#description),
+According to the [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map#description) for the `map` function,
 
 > It is not called for missing elements of the array; that is:
 > - indexes that have never been set;

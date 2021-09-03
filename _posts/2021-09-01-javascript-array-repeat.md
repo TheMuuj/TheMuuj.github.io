@@ -1,5 +1,5 @@
 ---
-title: Creating Arrays by Repeating Values in JavaScript
+title: Creating Arrays of Repeated Values in JavaScript
 description: There's got to be a better way!
 tags: TypeScript JavaScript development
 ---
@@ -74,4 +74,4 @@ console.log(h); // [0, 0, 0, 0, 0]
 
 As long as you aren't stuck supporting Internet Explorer, this version is the most concise and reads well. To be fair, Internet Explorer doesn't support `Array.from`, either.
 
-Next time, I'll cover some issues when trying to create arrays of repeated objects.
+[Next time]({% post_url 2021-09-02-javascript-array-repeat-with-objects %}), I'll cover some issues when trying to create arrays of repeated objects.

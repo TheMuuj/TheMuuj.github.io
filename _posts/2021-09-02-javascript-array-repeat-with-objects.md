@@ -1,6 +1,6 @@
 ---
 title: Creating Arrays of Repeated Objects in JavaScript
-description: There's got to be a better way!
+description: Again, there's got to be a better way! With objects!
 tags: TypeScript JavaScript development
 ---
 

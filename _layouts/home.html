@@ -14,14 +14,14 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        <h3>
+        <h2 class="post-heading">
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
           <small class="post-date">
             <time class="date" datetime="{{ post.date | date: '%FT%T' }}">{{ post.date | date: site.date_format }}</time>
           </small>          
-        </h3>      
+        </h2>      
         {%- if site.show_excerpts -%}
         <article>
           {%- if post.description -%}

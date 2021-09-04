@@ -58,7 +58,7 @@ for(const element of ['earth', 'wind', 'fire', 'water']) {
 ```
 
 Output:
-<pre>
+<pre class="output">
 🌎 <span style="background:#006400;color:#FFFFFF;">[ earth ]</span>
 🌪 <span style="background:#F5F5F5;color:#000000;">[ wind ]</span>
 🔥 <span style="background:#FF4500;color:#FFFFFF;">[ fire ]</span>

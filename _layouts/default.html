@@ -4,7 +4,11 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Montserrat:ital,wght@0,300;0,500;1,300;1,500&display=swap" rel="stylesheet">
+    <!--styles-->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
     <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
     <link rel="shortcut icon" type="image/png" href="{{ 'favicon.ico' | relative_url }}">
@@ -21,15 +25,13 @@
     {%- include header.html -%}
 
     <div id="content-wrapper">
-      <div class="inner clearfix">
-        <main>
-          <section id="main-content">          
-            {{ content }}
-          </section>
-        </main>
+      <main>
+        <section id="main-content">          
+          {{ content }}
+        </section>
+      </main>
 
-        {%- include sidebar.html -%}
-      </div>
+      {%- include sidebar.html -%}
     </div>
 
     {%- include footer.html -%}

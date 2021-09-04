@@ -1,0 +1,337 @@
+@import 'normalize';
+@import 'code';
+
+$header-height: 540px;
+
+$scrollbar-width: 0.75rem;
+
+$responsive-minimum: 240px;
+$responsive-small: 960px;
+$responsive-medium: 1200px;
+
+$color-back: var(--color-back);
+$color-bg: var(--color-bg);
+$color-text: var(--color-text);
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+$color-bold: var(--color-bold);
+$color-divider: var(--color-divider);
+$color-shadow: var(--color-shadow);
+$color-sidebar: var(--color-sidebar);
+$color-code: var(--color-code);
+
+$text-basis: 18px;
+$text-largest: 2rem;
+$text-large: 1.5rem;
+$text-normal: 1rem;
+$text-small: 0.8rem;
+
+$family-header: 'Dosis', sans-serif;
+$family-default: 'Montserrat', sans-serif;
+$family-code: monospace;
+
+$weight-header: 300;
+$weight-normal: 300;
+$weight-bold: 500;
+
+$size-margin: 1.5rem;
+$size-spacing: 0.5rem;
+$size-paragraph: 1rem;
+$size-indent: 0.75rem;
+
+$width-sidebar: 15rem;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    --color-back: #070707;
+    --color-bg: #111111;
+    --color-text: #CCCCCC;
+    --color-primary: #1987C6;
+    --color-secondary: #F2A900;
+    --color-bold: #FFFFFF;
+    --color-divider: #222222;
+    --color-shadow: #000000;
+    --color-sidebar: #222222;
+    --color-code: #031721;
+
+    background: $color-bg;
+    color: $color-text;
+
+    font-family: $family-default;
+    font-size: $text-basis;
+    font-weight: $weight-normal;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 1.5;
+
+    min-width: $responsive-minimum;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+}
+a:hover {
+    color: $color-primary;
+}
+
+::-webkit-scrollbar {
+    height: $scrollbar-width;
+    width: $scrollbar-width;
+    background: $color-bg;    
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-primary;
+    -webkit-border-radius: 0.5 * $scrollbar-width;
+    -webkit-box-shadow: 0px 1px 2px $color-shadow;
+}
+
+pre::-webkit-scrollbar {
+    height: 0.5 * $scrollbar-width;
+    width: 0.5 * $scrollbar-width;
+}
+
+header {
+    //background: $color-back;
+    background-color: $color-back;
+    background-image: url(../images/themuuj-banner.png);
+    background-position: center bottom;
+    background-size: auto;
+    height: $header-height / 3.0;
+
+    position: sticky;
+    top: calc(4rem - #{$header-height});
+
+    border-bottom: 4px solid $color-primary;
+    box-shadow: 0px 2px 4px $color-shadow;
+
+    h1,h2 {
+        color: $color-bold;
+    }
+}
+
+header.layout-home {
+    height: $header-height;
+}
+
+.header-content {
+    position: absolute;
+    padding: 0 $size-margin;
+    width: 100%;
+    bottom: $size-spacing;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $family-header;
+    font-weight: $weight-header;
+    color: $color-bold;
+
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background: $color-bg;
+    font-size: $text-small;
+    padding: 0 $size-margin 0 $size-margin;
+
+    h3 {
+        color: $color-secondary;
+    }
+    p {
+        margin: 0 0 $size-paragraph $size-paragraph;
+    }
+}
+
+#content-wrapper {
+    background: $color-bg;
+    padding: $size-margin;
+    font-size: $text-normal;
+}
+
+#content-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    gap: $size-spacing;
+
+    > main {
+        flex-grow: 1;
+    }
+    > aside {
+        flex: 0 0 $width-sidebar;
+
+        background: $color-sidebar;
+        padding: $size-margin;
+        height: auto;
+
+        box-shadow: 2px 2px 4px $color-shadow;
+    }
+}
+
+@media only screen and (max-width: ($responsive-small - 1px)) {
+
+    .header-content {
+        display: block;
+    }
+
+}
+
+
+@media only screen and (max-width: ($responsive-medium - 1px)) {
+
+    #content-wrapper {
+        display: block;
+    }
+
+}
+
+p {
+    margin: 0 0 $size-paragraph;
+}
+
+nav > p:last-of-type {
+    margin: 0;
+}
+
+small {
+    font-family: $family-default;
+    font-size: $text-small;
+}
+
+code {
+    color: $color-secondary;
+    font-family: $family-code;
+}
+
+strong,b {
+    font-weight: $weight-bold;
+}
+
+em,i {
+    font-style: italic;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul:not([class]),
+ul.list {
+    margin: 0 0 $size-paragraph 0;
+
+    li::before {
+        content: "\2022";
+        width: $size-indent;
+        display: inline-block;
+        color: $color-secondary;
+        font-weight: $weight-bold;
+        margin: 0;
+        padding: 0 0 0 $size-indent;
+    }
+}
+
+.output {
+    background: $color-code;
+    padding: 0 $size-spacing;
+    color: $color-text;
+}
+
+.highlight {
+    background: $color-code;
+    padding: 0 $size-spacing;
+}
+
+#main-content {
+    background: $color-back;
+    padding: $size-margin;
+    margin-bottom: $size-spacing;
+
+    h2 {
+        padding-bottom: $size-spacing;
+        margin-bottom: $size-spacing;
+        border-bottom: dotted 1px $color-divider;    
+    }
+
+    h3::before {
+        content: '// ';
+        color: $color-primary;
+    }
+    h4::before {
+        content: '/// ';
+        color: $color-primary;
+    }
+    h5::before {
+        content: '//// ';
+        color: $color-primary;
+    }
+    h6::before {
+        content: '//// ';
+        color: $color-primary;
+    }
+}
+
+h2 {
+    color: $color-secondary;
+    font-size: $text-largest;
+}
+
+.post-list {
+    > li {
+        padding: $size-margin;
+        margin-bottom: $size-spacing;
+
+        > h2.post-heading {
+            font-size: $text-large;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-bottom: $size-spacing;
+            margin-bottom: $size-spacing;
+            border-bottom: dotted 1px $color-divider;
+            font-size: $text-largest;
+        }
+    }
+}
+
+.post-more {
+    margin: $size-spacing 0;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $size-spacing;
+
+    margin-top: $size-spacing;
+
+    color: $text-normal;
+    font-size: $text-small;
+
+    .tags {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+        color: $color-secondary;
+        display: flex;
+        flex-wrap: wrap;
+        gap: $size-spacing;
+    }
+
+    p, ul {
+        margin: 0;
+    }
+}

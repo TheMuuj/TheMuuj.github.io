@@ -6,6 +6,7 @@ body {
     --code-operator: #D4D4D4;
     --code-name: #4EC9B0;
     --code-class: #CE9178;
+    --code-attribute: #DCDCAA;
     --code-function: #DCDCAA;
 
     --code-number: #B5CEA8;
@@ -30,26 +31,14 @@ body {
     .o,.ow,.p {
         color: var(--code-operator);
     }
-    // .highlight .n { color: #93A1A1 } /* Name */
-// .highlight .na { color: #93A1A1 } /* Name.Attribute */
-// .highlight .nb { color: #B58900 } /* Name.Builtin */
-// .highlight .nc { color: #268BD2 } /* Name.Class */
-// .highlight .no { color: #CB4B16 } /* Name.Constant */
-// .highlight .nd { color: #268BD2 } /* Name.Decorator */
-// .highlight .ni { color: #CB4B16 } /* Name.Entity */
-// .highlight .ne { color: #CB4B16 } /* Name.Exception */
-// .highlight .nf { color: #268BD2 } /* Name.Function */
-// .highlight .nl { color: #93A1A1 } /* Name.Label */
-// .highlight .nn { color: #93A1A1 } /* Name.Namespace */
-// .highlight .nx { color: #93A1A1 } /* Name.Other */
-// .highlight .py { color: #93A1A1 } /* Name.Property */
-// .highlight .nt { color: #268BD2 } /* Name.Tag */
-// .highlight .nv { color: #268BD2 } /* Name.Variable */
-    .n,.na,.nb,.nc,.no,.nd,.ni,.ne,.nf,.nl,.nn,.nx,.py,.nt,.nv {
+    .n,.nb,.nc,.no,.nd,.ni,.ne,.nf,.nl,.nn,.nx,.py,.nt,.nv {
         color: var(--code-name);
     }
     .nc {
         color: var(--code-class);
+    }
+    .na {
+        color: var(--code-keyword);
     }
     .nf {
         color: var(--code-function);

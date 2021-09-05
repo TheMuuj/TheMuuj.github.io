@@ -14,14 +14,18 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        <h2 class="post-heading">
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-          <small class="post-date">
-            <time class="date" datetime="{{ post.date | date: '%FT%T' }}">{{ post.date | date: site.date_format }}</time>
-          </small>          
-        </h2>      
+        <div class="post-heading">
+          <div class="post-bar">
+            <h2>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h2>
+            <small class="post-date">
+              <time class="date" datetime="{{ post.date | date: '%FT%T' }}">{{ post.date | date: site.date_format }}</time>
+            </small>
+          </div>
+        </div>
         {%- if site.show_excerpts -%}
         <article>
           {%- if post.description -%}
@@ -43,11 +47,11 @@ layout: default
           <li>{{ tag }}</li>
           {% endfor %}
           </ul>
-        </aside>        
+        </aside>
       </li>
       {%- endfor -%}
     </ul>
-    
+
   {%- endif -%}
 
 </div>

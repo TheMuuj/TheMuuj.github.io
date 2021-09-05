@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
+<div class="post-heading">
+  <h2>{{ page.title }}</h2>
+</div>
 <p class="meta">
   <span class="label">Posted:</span>
-  <time class="date" datetime="{{ page.date | date: '%FT%T' }}">{{ page.date | date: site.date_format }}</time>  
+  <time class="date" datetime="{{ page.date | date: '%FT%T' }}">{{ page.date | date: site.date_format }}</time>
 </p>
 <p class="post-description">
   {{ page.description | escape }}

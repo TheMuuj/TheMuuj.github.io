@@ -17,11 +17,13 @@ $color-highlight: var(--color-highlight);
 $color-secondary: var(--color-secondary);
 $color-bold: var(--color-bold);
 $color-header: var(--color-header);
+$color-header2: var(--color-header2);
 $color-border: var(--color-border);
 $color-divider: var(--color-divider);
 $color-shadow: var(--color-shadow);
 $color-sidebar: var(--color-sidebar);
 $color-code: var(--color-code);
+$color-code2: var(--color-code2);
 $color-scrollbar: var(--color-scrollbar);
 
 $text-basis: 18px;
@@ -42,6 +44,7 @@ $size-margin: 1.5rem;
 $size-spacing: 0.5rem;
 $size-paragraph: 1rem;
 $size-indent: 0.75rem;
+$size-divider: 0.25rem;
 
 $width-sidebar: 15rem;
 
@@ -54,11 +57,13 @@ $width-sidebar: 15rem;
     --color-secondary: #F2A900;
     --color-bold: #FFFFFF;
     --color-header: #FFFFFF;
+    --color-header2: #96DAFF;
     --color-border: #1987C6;
     --color-divider: #222222;
     --color-shadow: #00000080;
     --color-sidebar: #222222;
     --color-code: #031721;
+    --color-code2: #01080C;
     --color-scrollbar: #000000;
 }
 
@@ -71,6 +76,8 @@ $width-sidebar: 15rem;
 
 body {
     background: $color-bg;
+    background-image: radial-gradient(circle at bottom, $color-back 0%, $color-bg 100%);
+
     color: $color-text;
 
     font-family: $family-default;
@@ -92,11 +99,13 @@ body.mode-light {
     --color-sidebar: #E4E4E4;
     --color-secondary: #6359AF;
     --color-bold: #000000;
-    --color-header: #6359AF;
+    --color-header: #9084FC;
+    --color-header2: #6359AF;
     --color-border: #6359AF;
     --color-divider: #888888;
-    --color-code: #222222;
-    --color-scrollbar: #444444;
+    --color-code: #383838;
+    --color-code2: #222222;
+    --color-scrollbar: #222222;
 }
 
 a {
@@ -137,7 +146,7 @@ header {
     position: sticky;
     top: calc(4rem - #{$header-height / 3.0});
 
-    border-bottom: 4px solid $color-border;
+    border-bottom: $size-divider solid $color-border;
     box-shadow: 0px 2px 4px $color-shadow;
 
     h1,h2 {
@@ -170,7 +179,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 footer {
-    background: $color-bg;
     font-size: $text-small;
     padding: 0 $size-margin 0 $size-margin;
 
@@ -183,7 +191,6 @@ footer {
 }
 
 #content-wrapper {
-    background: $color-bg;
     padding: $size-margin;
     font-size: $text-normal;
 }
@@ -261,9 +268,18 @@ ul.list {
     color: $color-text;
 }
 
-.highlight {
+pre.highlight {
+    border-radius: $size-spacing;
+
     background: $color-code;
-    padding: 0 $size-spacing;
+    background-image: linear-gradient(        
+        to bottom,
+        $color-code2 0%,
+        $color-code 1% 20%,
+        $color-code2 80% 100%
+    );
+
+    padding: $size-spacing;
 }
 
 #main-content {
@@ -272,9 +288,35 @@ ul.list {
     margin-bottom: $size-spacing;
 
     h2 {
+        font-size: $text-largest;
+    }
+
+    .post-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .post-heading {
         padding-bottom: $size-spacing;
         margin-bottom: $size-spacing;
-        border-bottom: dotted 1px $color-divider;
+    }
+    
+    .post-list-heading::after,
+    .post-heading::after {
+        content: '';
+        display: block;
+        height: $size-divider;
+        background: $color-secondary;
+        background-image: linear-gradient(to right, $color-secondary 0%, $color-back 95%);
+    }
+
+    .post-list {
+        .post-heading::after {
+            height: 0.5 * $size-divider;
+            background: $color-primary;
+            background-image: linear-gradient(to right, $color-primary 0%, $color-back 95%);
+        }    
     }
 
     h3::before {
@@ -307,18 +349,9 @@ h2 {
     }
 }
 
-.post-heading {
-    font-size: $text-largest;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding-bottom: $size-spacing;
-    margin-bottom: $size-spacing;
-    border-bottom: dotted 1px $color-divider;
-}
-
 .post-more {
+    font-size: $text-large;
+    font-style: italic;
     margin: $size-spacing 0;
 }
 
@@ -348,6 +381,23 @@ h2 {
     }
 }
 
+.gradient-shine {
+    background-color: $color-header;
+    background-image: linear-gradient(        
+        to bottom,
+        $color-header 0% 20%,
+        $color-header2 80% 100%
+    );
+    
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;    
+
+    color: #FFFFFF01;
+    -moz-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
+}
+
 @media only screen and (max-width: ($responsive-small - 1px)) {
 
     .header-content {
@@ -358,13 +408,18 @@ h2 {
         font-size: $text-large;
     }
 
-    .post-heading {
-        font-size: $text-large;
-        flex-direction: column;
-        align-items: flex-start;
+    #main-content {
+        h2 {
+            font-size: $text-large;
+        }
 
-        small {
-            display: block;
+        .post-bar {
+            flex-direction: column;
+            align-items: flex-start;
+
+            // small {
+            //     display: block;
+            // }    
         }
     }
 

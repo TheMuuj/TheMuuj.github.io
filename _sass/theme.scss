@@ -135,7 +135,7 @@ header {
     height: $header-height / 3.0;
 
     position: sticky;
-    top: calc(4rem - #{$header-height});
+    top: calc(4rem - #{$header-height / 3.0});
 
     border-bottom: 4px solid $color-border;
     box-shadow: 0px 2px 4px $color-shadow;
@@ -147,6 +147,7 @@ header {
 
 header.layout-home {
     height: $header-height;
+    top: calc(4rem - #{$header-height});
 }
 
 .header-content {

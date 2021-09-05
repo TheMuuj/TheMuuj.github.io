@@ -13,12 +13,16 @@ $color-back: var(--color-back);
 $color-bg: var(--color-bg);
 $color-text: var(--color-text);
 $color-primary: var(--color-primary);
+$color-highlight: var(--color-highlight);
 $color-secondary: var(--color-secondary);
 $color-bold: var(--color-bold);
+$color-header: var(--color-header);
+$color-border: var(--color-border);
 $color-divider: var(--color-divider);
 $color-shadow: var(--color-shadow);
 $color-sidebar: var(--color-sidebar);
 $color-code: var(--color-code);
+$color-scrollbar: var(--color-scrollbar);
 
 $text-basis: 18px;
 $text-largest: 2rem;
@@ -41,22 +45,31 @@ $size-indent: 0.75rem;
 
 $width-sidebar: 15rem;
 
-* {
-    box-sizing: border-box;
-}
-
-body {
+:root {
     --color-back: #070707;
     --color-bg: #111111;
     --color-text: #CCCCCC;
     --color-primary: #1987C6;
+    --color-highlight: #7FAAC1;
     --color-secondary: #F2A900;
     --color-bold: #FFFFFF;
+    --color-header: #FFFFFF;
+    --color-border: #1987C6;
     --color-divider: #222222;
-    --color-shadow: #000000;
+    --color-shadow: #00000080;
     --color-sidebar: #222222;
     --color-code: #031721;
+    --color-scrollbar: #000000;
+}
 
+* {
+    box-sizing: border-box;
+
+    //transition-duration: 0.25s;
+    //transition-property: color, background-color;
+}
+
+body {
     background: $color-bg;
     color: $color-text;
 
@@ -72,22 +85,38 @@ body {
     min-width: $responsive-minimum;
 }
 
+body.mode-light {
+    --color-bg: #C7C7C7;
+    --color-back: #F4F4F4;
+    --color-text: #111111;
+    --color-sidebar: #E4E4E4;
+    --color-secondary: #6359AF;
+    --color-bold: #000000;
+    --color-header: #6359AF;
+    --color-border: #6359AF;
+    --color-divider: #888888;
+    --color-code: #222222;
+    --color-scrollbar: #444444;
+}
+
 a {
+    transition: color 0.5s;
     color: $color-primary;
     text-decoration: none;
 }
 a:hover {
-    color: $color-primary;
+    color: $color-highlight;
+    text-decoration: underline;
 }
 
 ::-webkit-scrollbar {
     height: $scrollbar-width;
     width: $scrollbar-width;
-    background: $color-bg;    
+    background: $color-scrollbar;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $color-primary;
+    background: $color-border;
     -webkit-border-radius: 0.5 * $scrollbar-width;
     -webkit-box-shadow: 0px 1px 2px $color-shadow;
 }
@@ -108,11 +137,11 @@ header {
     position: sticky;
     top: calc(4rem - #{$header-height});
 
-    border-bottom: 4px solid $color-primary;
+    border-bottom: 4px solid $color-border;
     box-shadow: 0px 2px 4px $color-shadow;
 
     h1,h2 {
-        color: $color-bold;
+        color: $color-header;
     }
 }
 
@@ -145,7 +174,7 @@ footer {
     padding: 0 $size-margin 0 $size-margin;
 
     h3 {
-        color: $color-secondary;
+        color: $color-bold;
     }
     p {
         margin: 0 0 $size-paragraph $size-paragraph;
@@ -177,23 +206,6 @@ footer {
 
         box-shadow: 2px 2px 4px $color-shadow;
     }
-}
-
-@media only screen and (max-width: ($responsive-small - 1px)) {
-
-    .header-content {
-        display: block;
-    }
-
-}
-
-
-@media only screen and (max-width: ($responsive-medium - 1px)) {
-
-    #content-wrapper {
-        display: block;
-    }
-
 }
 
 p {
@@ -261,7 +273,7 @@ ul.list {
     h2 {
         padding-bottom: $size-spacing;
         margin-bottom: $size-spacing;
-        border-bottom: dotted 1px $color-divider;    
+        border-bottom: dotted 1px $color-divider;
     }
 
     h3::before {
@@ -291,19 +303,18 @@ h2 {
     > li {
         padding: $size-margin;
         margin-bottom: $size-spacing;
-
-        > h2.post-heading {
-            font-size: $text-large;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            padding-bottom: $size-spacing;
-            margin-bottom: $size-spacing;
-            border-bottom: dotted 1px $color-divider;
-            font-size: $text-largest;
-        }
     }
+}
+
+.post-heading {
+    font-size: $text-largest;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: $size-spacing;
+    margin-bottom: $size-spacing;
+    border-bottom: dotted 1px $color-divider;
 }
 
 .post-more {
@@ -334,4 +345,35 @@ h2 {
     p, ul {
         margin: 0;
     }
+}
+
+@media only screen and (max-width: ($responsive-small - 1px)) {
+
+    .header-content {
+        display: block;
+    }
+
+    h2 {
+        font-size: $text-large;
+    }
+
+    .post-heading {
+        font-size: $text-large;
+        flex-direction: column;
+        align-items: flex-start;
+
+        small {
+            display: block;
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: ($responsive-medium - 1px)) {
+
+    #content-wrapper {
+        display: block;
+    }
+
 }

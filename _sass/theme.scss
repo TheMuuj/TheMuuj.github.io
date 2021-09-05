@@ -12,6 +12,7 @@ $responsive-medium: 1200px;
 $color-back: var(--color-back);
 $color-bg: var(--color-bg);
 $color-text: var(--color-text);
+$color-dim: var(--color-dim);
 $color-primary: var(--color-primary);
 $color-highlight: var(--color-highlight);
 $color-secondary: var(--color-secondary);
@@ -26,11 +27,13 @@ $color-code: var(--color-code);
 $color-code2: var(--color-code2);
 $color-scrollbar: var(--color-scrollbar);
 
-$text-basis: 18px;
+$text-basis: 16px;
 $text-largest: 2rem;
-$text-large: 1.5rem;
+$text-larger: 1.5rem;
+$text-large: 1.25rem;
 $text-normal: 1rem;
-$text-small: 0.8rem;
+$text-medium: 0.85rem;
+$text-small: 0.75rem;
 
 $family-header: 'Dosis', sans-serif;
 $family-default: 'Montserrat', sans-serif;
@@ -52,6 +55,7 @@ $width-sidebar: 15rem;
     --color-back: #070707;
     --color-bg: #111111;
     --color-text: #CCCCCC;
+    --color-dim: #888888;
     --color-primary: #1987C6;
     --color-highlight: #7FAAC1;
     --color-secondary: #F2A900;
@@ -65,13 +69,12 @@ $width-sidebar: 15rem;
     --color-code: #031721;
     --color-code2: #01080C;
     --color-scrollbar: #000000;
+
+    font-size: $text-basis;
 }
 
 * {
     box-sizing: border-box;
-
-    //transition-duration: 0.25s;
-    //transition-property: color, background-color;
 }
 
 body {
@@ -81,7 +84,6 @@ body {
     color: $color-text;
 
     font-family: $family-default;
-    font-size: $text-basis;
     font-weight: $weight-normal;
 
     margin: 0;
@@ -96,6 +98,7 @@ body.mode-light {
     --color-bg: #C7C7C7;
     --color-back: #F4F4F4;
     --color-text: #111111;
+    --color-dim: #555555;
     --color-sidebar: #E4E4E4;
     --color-secondary: #6359AF;
     --color-bold: #000000;
@@ -151,6 +154,7 @@ header {
 
     h1,h2 {
         color: $color-header;
+        font-size: $text-largest;
     }
 }
 
@@ -349,8 +353,15 @@ h2 {
     }
 }
 
-.post-more {
+.post-description {
+    font-family: $family-header;
     font-size: $text-large;
+    font-style: italic;
+    color: $color-dim;
+}
+
+.post-more {
+    font-size: $text-larger;
     font-style: italic;
     margin: $size-spacing 0;
 }
@@ -405,12 +416,18 @@ h2 {
     }
 
     h2 {
-        font-size: $text-large;
+        font-size: $text-larger;
+    }
+
+    header {
+        h1,h2 {
+            font-size: $text-larger;
+        }
     }
 
     #main-content {
         h2 {
-            font-size: $text-large;
+            font-size: $text-larger;
         }
 
         .post-bar {

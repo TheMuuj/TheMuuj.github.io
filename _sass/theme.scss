@@ -53,6 +53,8 @@ $size-divider: 0.25rem;
 $width-sidebar: 15rem;
 $width-divider-spill: 1rem;
 
+$button-height: 2em;
+
 :root {
     --color-back: #070707;
     --color-bg: #111111;
@@ -358,16 +360,47 @@ h2 {
 }
 
 .post-description {
+    margin-top: $size-spacing;
+
     font-family: $family-header;
     font-size: $text-large;
     font-style: italic;
     color: $color-dim;
 }
 
+.post-footer {
+    border-top: dotted 1px $color-divider;
+    padding: $size-spacing 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .post-more {
-    font-size: $text-larger;
-    font-style: italic;
-    margin: $size-spacing 0;
+    font-size: $text-normal;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 0 $size-indent;
+    white-space: nowrap;
+
+    background: $color-primary;
+    color: $color-text;
+    transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+
+    border-radius: 0.5 * $button-height;
+    line-height: $button-height;
+
+    box-shadow: 0px 0px 8px $color-primary;
+}
+.link-button:hover {
+    background: $color-primary;
+    color: $color-bold;
+
+    box-shadow: 0px 0px 16px $color-highlight;
+    text-decoration: none;
 }
 
 .meta {
@@ -375,7 +408,7 @@ h2 {
     flex-wrap: wrap;
     gap: $size-spacing;
 
-    margin-top: $size-spacing;
+    margin: 0;
 
     color: $text-normal;
     font-size: $text-small;
@@ -394,6 +427,10 @@ h2 {
     p, ul {
         margin: 0;
     }
+}
+
+.meta + .meta {
+    margin-top: 0.25 * $size-spacing;
 }
 
 .gradient-shine {
@@ -456,6 +493,10 @@ h2 {
             //     display: block;
             // }
         }
+    }
+
+    .post-footer {
+        display: block;
     }
 
 }

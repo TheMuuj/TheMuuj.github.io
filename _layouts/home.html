@@ -32,22 +32,23 @@ layout: default
           <p class="post-description">{{ post.description | escape }}</p>
           {%- endif -%}
           {{ post.excerpt }}
-          <p class="post-more">
-            <a class="more-link" href="{{ post.url | relative_url }}">
-              More&hellip;
-            </a>
-          </p>
+          <div class="post-footer">
+            <p class="post-more">
+              <a class="link-button more-link" href="{{ post.url | relative_url }}">
+                Read More &rtrif;
+              </a>
+            </p>
+            <aside class="meta">
+              <p class="label">Tags:</p>
+              <ul class="tags">
+              {% for tag in post.tags %}
+              <li>{{ tag }}</li>
+              {% endfor %}
+              </ul>
+            </aside>            
+          </div>
         </article>
         {%- endif -%}
-
-        <aside class="meta">
-          <p class="label">Tags:</p>
-          <ul class="tags">
-          {% for tag in post.tags %}
-          <li>{{ tag }}</li>
-          {% endfor %}
-          </ul>
-        </aside>
       </li>
       {%- endfor -%}
     </ul>

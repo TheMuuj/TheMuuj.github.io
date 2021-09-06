@@ -8,12 +8,6 @@ layout: default
   <span class="label">Posted:</span>
   <time class="date" datetime="{{ page.date | date: '%FT%T' }}">{{ page.date | date: site.date_format }}</time>
 </p>
-<p class="post-description">
-  {{ page.description | escape }}
-</p>
-
-{{ content }}
-
 <aside class="meta">
   <p class="label">Tags:</p>
   <ul class="tags">
@@ -22,3 +16,9 @@ layout: default
   {% endfor %}
   </ul>
 </aside>
+<p class="post-description">
+  {{ page.description | escape }}
+</p>
+
+{{ content }}
+

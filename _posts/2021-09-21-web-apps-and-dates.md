@@ -10,25 +10,29 @@ Working with dates and times is hard. Doing so with JavaScript is also harder th
 
 ## Introduction
 
-First, I highly recommend watching [The Problem with Time and Timezones](https://www.youtube.com/watch?v=-5wpm-gesOY) featuring Tom Scott on the [Computerphile](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA) channel if you have not already. Be warned, it can induce anxiety.
+First, if you have not already seen this, I highly recommend watching [The Problem with Time and Timezones](https://www.youtube.com/watch?v=-5wpm-gesOY) featuring Tom Scott on the [Computerphile channel](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA).
 
 Second, I'm disappointed in the state of date/time support in JavaScript. There are two pretty good libraries out there: [Moment.js](https://momentjs.com/) and [date-fns](https://date-fns.org/). Each has their pros and cons, but they're both certainly better than dealing with the native JavaScript `Date`.
 
-Third, I'm equally disappointed in the built-in date-picker components that HTML5 added. Sure, they're great if you're trying to write a website that supports running without any JavaScript. I know those developers exist, but it's never me. I will go into more detail about the issues in future posts, but [the MDN page on the topic](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#handling_browser_support) does a pretty good job of covering the basic problems.
+Third, I'm equally disappointed in the built-in date-picker components that HTML5 added. Sure, they're great if you're trying to write a website that supports running without any JavaScript. I know those developers exist, but it's never me. I will go into more detail about the issues in future posts, but suffice to say [the MDN page on the topic](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#handling_browser_support) does a pretty good job of covering the basic problems.
 
 ## The JavaScript `Date` type
 
-When the `Date` type was first introduced, it only supported "local" time and used two digits for the year. We're already off to a bad start. I get it, browsers probably didn't have great Date libraries in the languages they were developed in, and almost every language/framework has started off on the wrong foot, including .NET.
+When the `Date` type was first introduced, it only supported "local" time and used two digits for the year. We're already off to a bad start. I get it, early browsers probably didn't have great date/time libraries in the languages they were developed in, and practically *every* language/framework has started off on the wrong foot, including .NET. Java, from which JavaScript derives much of its early inspiration with regard to date handling, was particularly problematic.
 
-I'm also briefly ignoring the issue that the JavaScript `Date` doesn't support dates without times, which will come up later when I cover the problems creating a great user experience for picking dates/times.
+I'm also briefly ignoring the issue that the JavaScript `Date` doesn't support dates *without* times, which will come up later when I cover the problems creating a great user experience for picking date values.
 
-Four-digit years and UTC were added later in a backwards-compatible way, making `Date` a bit more palatable. Still, this means it only supports "local" time and UTC.
+Four-digit years and UTC conversions were added later in a more-or-less backwards-compatible way, making `Date` a bit more palatable. Still, this means it only supports *"local"* time and UTC.
 
-I write "local" time because it's really the timezone on the computer that the browser is running on, and not any preference specified by the user. I have used web applications through secure appliances where the timezone on the remote computer was locked, and thus "local" time would often times be several hours off of where I was.
+I write *"local"* time because it's really the timezone on the computer that the browser is running on, and not any preference specified by the user. I have used web applications through secure appliances where the timezone on the remote computer was locked, and thus *"local"* time would often times be several hours off of where I actually was located.
 
-And even where I am may not be the timezone I want to use when times are presented to me in a web application. It's a perfectly acceptable *default*, setting, but I would like a way to override this.
+And even where I am physically located may not be the timezone I want to use when times are presented to me in a web application. It's a perfectly acceptable *default*, setting, but I would like a way to override this.
 
-For instance, I may be travelling from the Central Time to the Pacific Time, and I may adjust my computer's setting accordingly. In the case of mobile devices, it may happen automatically. When I log in to a particular web application, I may or may not want all of the dates to shift to the new timezone. If I'm scheduling an appointment while I'm travelling, I might prefer to continue to interact with an application in my "home" timezone.
+**Aside:** It would be nice for browsers to let you change some of these preferences for specific sites independently of the operating system, but that may be a pipe dream.
+
+For instance, I may be travelling from the Central Time to the Pacific Time, and I may adjust my computer's setting accordingly. In the case of mobile devices, it may even happen automatically. When I log in to a particular web application, I may or may not want all of the dates to shift to the new timezone. If I'm scheduling an appointment while I'm travelling, I might prefer to continue to interact with an application in my "home" timezone.
+
+One solution would be to have a "timezone picker" as part of your date/time picker. That's not for the faint of heart, though.
 
 Of course, none of this is unique to web applications. It's just that browsers don't provide great solutions for dealing with the problems.
 
@@ -41,9 +45,9 @@ const central = date.toLocaleString('en-US', { timeZone: 'America/Chicago' })
 
 The specification only requires that browsers support UTC, but it seems like everything other than Internet Explorer supports the full [IANA Time Zone Database](https://www.iana.org/time-zones). If you have the pleasure of no longer supporting IE, this is good news.
 
-With some clever logic, `toLocaleString` can be used to determine timezone rules for an arbitrary `timeZone` string, and conversions between named timezones can be performed.
+With some clever logic, `toLocaleString` can be used to determine timezone rules for an arbitrary `timeZone` string, and conversions between named timezones can be performed. The aforementioned `Moment.js` and `date-fns` have extension libraries to add timezone support, but they add quite a bit of extra code for something that should be provided out of the box.
 
-But it would be better if `Date`, while continuing to represent UTC, also supported arbitrary timezones, along with conversions between them. The aforementioned `Moment.js` and `date-fns` have extension libraries to add timezone support, but they add quite a bit of extra code for something that should be provided out of the box.
+But it would be better if `Date`, while continuing to represent UTC, also supported arbitrary timezones along with conversions between them. 
 
 Also, these libraries make it really easy to create a `Date` value that represents a time in a different timezone than the browser is using, but without that information tracked, using the built-in functions to convert to UTC will get it wrong. This can be a mess when trying to pass that information via JSON to a REST API.
 

@@ -74,7 +74,7 @@ console.log(roundtrip); // Fri Sep 18 2020 19:00:00 GMT-0500 (Central Daylight T
 
 At this point it probably makes more sense to pass around these values as strings using the `yyyy-mm-dd` format (the *superior* format) rather than use JavaScript `Date` values. But this is a form of Stringly Typing, which [Scott Hanselman suggests is a code smell](https://www.hanselman.com/blog/stringly-typed-vs-strongly-typed) (and I'm inclined to agree).
 
-So my first wishlist item for fixing this particular problem would be a native `DateOnly` type in JavaScript. We're getting [such a type in .NET 6](https://docs.microsoft.com/en-us/dotnet/api/system.dateonly?view=net-6.0), which is exciting.
+First on my wishlist item for fixing this particular problem would be a native `DateOnly` type in JavaScript, and there's [good news coming](https://tc39.es/proposal-temporal/docs/) there. We're also getting [such a type in .NET 6](https://docs.microsoft.com/en-us/dotnet/api/system.dateonly?view=net-6.0), so there's a lot to look forward to in this space. (or should I say spacetime?)
 
 ## Upcoming
 

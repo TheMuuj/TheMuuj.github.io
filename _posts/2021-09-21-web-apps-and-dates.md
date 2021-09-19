@@ -12,7 +12,12 @@ Working with dates and times is hard. Doing so with JavaScript is also harder th
 
 First, if you have not already seen this, I highly recommend watching [The Problem with Time and Timezones](https://www.youtube.com/watch?v=-5wpm-gesOY) featuring Tom Scott on the [Computerphile channel](https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA).
 
-Second, I'm disappointed in the state of date/time support in JavaScript. There are two pretty good libraries out there: [Moment.js](https://momentjs.com/) and [date-fns](https://date-fns.org/). Each has their pros and cons, but they're both certainly better than dealing with the native JavaScript `Date`.
+Second, I'm disappointed in the state of date/time support in JavaScript. There are some really good libraries out there to fill this gap:
+- [Moment.js](https://momentjs.com/)
+- [date-fns](https://date-fns.org/)
+- [js-joda](https://js-joda.github.io/js-joda/)
+
+Each has their pros and cons (the primary cons being the size required to include them in an application), but they're all better than dealing with the native JavaScript `Date`.
 
 Third, I'm equally disappointed in the built-in date-picker components that HTML5 added. Sure, they're great if you're trying to write a website that supports running without any JavaScript. I know those developers exist, but it's never me. I will go into more detail about the issues in future posts, but suffice to say [the MDN page on the topic](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#handling_browser_support) does a pretty good job of covering the basic problems.
 
@@ -45,11 +50,11 @@ const central = date.toLocaleString('en-US', { timeZone: 'America/Chicago' })
 
 The specification only requires that browsers support UTC, but it seems like everything other than Internet Explorer supports the full [IANA Time Zone Database](https://www.iana.org/time-zones). If you have the pleasure of no longer supporting IE, this is good news.
 
-With some clever logic, `toLocaleString` can be used to determine timezone rules for an arbitrary `timeZone` string, and conversions between named timezones can be performed. The aforementioned `Moment.js` and `date-fns` have extension libraries to add timezone support, but they add quite a bit of extra code for something that should be provided out of the box.
+With some clever logic, `toLocaleString` can be used to determine timezone rules for an arbitrary `timeZone` string, and conversions between named timezones can be performed. The aforementioned `Moment.js`, `date-fns`, and `js-joda` have extension libraries to add timezone support, but they add quite a bit of extra code for something that should be provided out of the box.
 
-But it would be better if `Date`, while continuing to represent UTC, also supported arbitrary timezones along with conversions between them. 
+It would be better if `Date`, while continuing to represent UTC, also supported arbitrary timezones along with conversions between them. 
 
-Also, these libraries make it really easy to create a `Date` value that represents a time in a different timezone than the browser is using, but without that information tracked, using the built-in functions to convert to UTC will get it wrong. This can be a mess when trying to pass that information via JSON to a REST API.
+Also, these libraries make it possible to create a `Date` value that represents a time in a different timezone than the browser is using. Without that information tracked in the `Date` instance itself, using the built-in functions to convert to UTC will get it wrong. This can be a mess when trying to pass that information via JSON to a REST API.
 
 ## What about JSON?
 
@@ -78,6 +83,10 @@ First on my wishlist for fixing this particular problem would be a native `DateO
 
 ## Upcoming
 
-I'm not done talking/ranting about this subject, and plan to return with more ways to address these problems. I have written code in several languages to deal with the pain-points of framework-provided native types, from JavaScript to C# to SQL. Every framework has subtle differences and issues.
+I'm not done talking/ranting about this subject, and plan to return with more ways to address these problems.
+
+I have written code in several languages to deal with the pain-points of framework-provided native types, from JavaScript to C# to SQL. Every framework has subtle differences and issues.
+
+I do forsee this problem will be addressed in browsers, but it's hard to tell how long we will have to wait.
 
 If you are writing code that doesn't need to care about timezones, or only needs to deal in one timezone (especially if that's UTC), I envy you.

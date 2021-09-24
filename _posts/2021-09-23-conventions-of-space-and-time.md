@@ -1,6 +1,6 @@
 ---
 title: Conventions of Space and Time
-description: '"The question, Constable, isn't where ... but when!"'
+description: "'The question, Constable, isn't where ... but when!'"
 tags: NASA JPL development
 ---
 

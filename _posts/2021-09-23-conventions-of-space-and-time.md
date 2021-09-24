@@ -40,7 +40,7 @@ Using the SPICE toolkit, dates are usually handled as Ephemeris Time (ET), speci
 
 The epoch generally used in astronomy is known as "J2000", defined as noon on January 1, 2000 in Terrestrial Time (`2000-01-01T12:00:00 TT`). I prefer J2000 to the Unix epoch, as it's much more convenient for the year `2000` to be "zero" instead of `1970`.
 
-I've been known to use J2000 in software projects unrelated to astronomy when trying to save bytes when encoding dates as a binary number. For instance, an unsigned 16-bit integer can store the number of days since J2000 can store dates as high as 2179.
+I've been known to use J2000 in software projects unrelated to astronomy when trying to save bytes when encoding dates as a binary number. For instance, when used to store the number of days since J2000, an unsigned 16-bit integer can store dates as high as 2179.
 
 ## More About SPICE
 

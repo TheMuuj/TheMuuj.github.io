@@ -34,7 +34,7 @@ The "correct" output should be `86400001s`. Also, it's impossible to predict whe
 
 So almost everyone just ignores leap seconds, for the most part. The servers that provide time synchronization have various ways of dealing with this issue. Google's and Amazon's NTP servers employ what they call [leap smear](https://developers.google.com/time/smear), where the extra second gets spread out over a 24 hour period.
 
-But astronomers need precise time calculations. The large scales involved mean that a difference of a second could mean a hugh change in position or velocity. Also, there's a need to synchronize the internal clocks of various spacecraft.
+But astronomers need precise time calculations. The large scales involved mean that a difference of a second could mean a huge change in position or velocity. Also, there's a need to synchronize the internal clocks of various spacecraft.
 
 Using the SPICE toolkit, dates are usually handled as Ephemeris Time (ET), specifically Barycentric Dynamical Time (TDB). This is just a number of seconds past a reference epoch, suitable for use as an independent variable in the calculation of differential equations to describe the motion of celestial objects.
 

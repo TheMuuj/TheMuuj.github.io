@@ -19,7 +19,7 @@ Actually, it wasn't so bad, as I did have good library support. NASA's [Navigati
 
 ## Leap Seconds
 
-Because of Leap Seconds, the last minute of the year can occasionally have 60 seconds. Therefore `2016 2016-12-31T23:59:60Z` is technically a valid. Most software does not bother with the distinction. If you calculate the number of seconds between two dates that span a leap second, the calculations will technically be off by the number of leap seconds between the dates. Being wrong by a few seconds for such a calculation isn't a usually big deal for most domains.
+Because of Leap Seconds, the last minute of the year can occasionally have 60 seconds. Therefore `2016 2016-12-31T23:59:60Z` is technically a valid Date/Time. Most software does not bother with the distinction. If you calculate the number of seconds between two dates that span a leap second, the calculations will technically be off by the number of leap seconds between the dates. Being wrong by a few seconds for such a calculation isn't a usually big deal for most domains.
 
 For example, in JavaScript:
 ```js

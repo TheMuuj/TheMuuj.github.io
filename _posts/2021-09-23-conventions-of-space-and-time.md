@@ -27,10 +27,10 @@ const endDate = new Date('2017-01-01T12:00:00');
 const startDate = new Date('2016-12-31T12:00:00');
 const secondsElapsed = endDate.getTime() - startDate.getTime();
 
-console.log(`${secondsElapsed}s Elapsed`); // 86400000s Elapsed
+console.log(`${secondsElapsed} ms Elapsed`); // 86400000 ms Elapsed
 ```
 
-The "correct" output should be `86400001s`.
+The "correct" output should be `86401000 ms`.
 
 Also, it's impossible to predict when leap seconds are going to be added, so calculations involving future dates can be wrong. (This same problem happens with future timezone calculations).
 

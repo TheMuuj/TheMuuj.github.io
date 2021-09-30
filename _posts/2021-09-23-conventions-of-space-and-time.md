@@ -19,7 +19,7 @@ Actually, it wasn't so bad, as I did have good library support. NASA's [Navigati
 
 ## Leap Seconds
 
-Because of Leap Seconds, the last minute of the year can occasionally have 60 seconds. Therefore `2016-12-31T23:59:60Z` is technically a valid Date/Time. Most software does not bother with the distinction. If you calculate the number of seconds between two dates that span a leap second, the calculations will technically be off by the number of leap seconds between the dates. Being wrong by a few seconds for such a calculation isn't a usually big deal for most domains.
+Because of Leap Seconds, the last minute of the year can occasionally have 60 seconds. Therefore `2016-12-31T23:59:60Z` is technically a valid date/time. Most software does not bother with the distinction. If you calculate the number of seconds between two dates that span a leap second, the calculations will technically be off by the number of leap seconds between the dates. Being wrong by a few seconds for such a calculation isn't a usually big deal for most domains.
 
 For example, in JavaScript:
 ```js
@@ -30,7 +30,9 @@ const secondsElapsed = endDate.getTime() - startDate.getTime();
 console.log(`${secondsElapsed}s Elapsed`); // 86400000s Elapsed
 ```
 
-The "correct" output should be `86400001s`. Also, it's impossible to predict when leap seconds are going to be added, so calculations involving future dates can be wrong. (This same problem happens with future timezone calculations).
+The "correct" output should be `86400001s`.
+
+Also, it's impossible to predict when leap seconds are going to be added, so calculations involving future dates can be wrong. (This same problem happens with future timezone calculations).
 
 So almost everyone just ignores leap seconds, for the most part. The servers that provide time synchronization have various ways of dealing with this issue. Google's and Amazon's NTP servers employ what they call [leap smear](https://developers.google.com/time/smear), where the extra second gets spread out over a 24 hour period.
 
